@@ -78,93 +78,20 @@
                 </label>
             </div>
 
-            <div class="row g-4">
-               
-                <aside class="col-lg-3">
-                    <div class="sidebar-filtros" aria-label="Filtrar pacotes">
-                        <div class="sidebar-filtros-topo">
-                            <h3>Filtrar resultados</h3>
-                            <i class="bi bi-sliders"></i>
-                        </div>
-
-                        <div class="accordion accordion-filtros" id="accordionFiltros">
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filtroDestino" aria-expanded="true" aria-controls="filtroDestino">Destino</button>
-                                </h4>
-                                <div id="filtroDestino" class="accordion-collapse collapse show" data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino1"><label class="form-check-label" for="destino1">Bahia (Salvador)</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino2"><label class="form-check-label" for="destino2">Mato Grosso do Sul (Bonito)</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino3"><label class="form-check-label" for="destino3">Maranhão</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino4"><label class="form-check-label" for="destino4">Goiás</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino5"><label class="form-check-label" for="destino5">Minas Gerais</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="destino6"><label class="form-check-label" for="destino6">Pernambuco</label></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filtroDuracao" aria-expanded="false" aria-controls="filtroDuracao">Duração</button>
-                                </h4>
-                                <div id="filtroDuracao" class="accordion-collapse collapse" data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="dur1"><label class="form-check-label" for="dur1">Até 3 dias</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="dur2"><label class="form-check-label" for="dur2">4 a 7 dias</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="dur3"><label class="form-check-label" for="dur3">8 a 14 dias</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="dur4"><label class="form-check-label" for="dur4">Mais de 14 dias</label></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filtroCategoria" aria-expanded="true" aria-controls="filtroCategoria">Categoria</button>
-                                </h4>
-                                <div id="filtroCategoria" class="accordion-collapse collapse show" data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" data-filtro-categoria value="ecoturismo" id="cat1"><label class="form-check-label" for="cat1">Ecoturismo</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" data-filtro-categoria value="cultural" id="cat2"><label class="form-check-label" for="cat2">Cultural</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" data-filtro-categoria value="praia" id="cat3"><label class="form-check-label" for="cat3">Praia</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" data-filtro-categoria value="aventura" id="cat4"><label class="form-check-label" for="cat4">Aventura</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox" data-filtro-categoria value="gastronomico" id="cat5"><label class="form-check-label" for="cat5">Gastronômico</label></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filtroPreco" aria-expanded="false" aria-controls="filtroPreco">Faixa de preço</button>
-                                </h4>
-                                <div id="filtroPreco" class="accordion-collapse collapse" data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body">
-                                        <label for="faixa-preco" class="form-check-label d-block mb-2">Até <span id="valor-faixa-preco">R$ 8.000</span></label>
-                                        <input type="range" class="form-range" id="faixa-preco" min="800" max="12000" value="8000" step="100" oninput="document.getElementById('valor-faixa-preco').textContent = 'R$ ' + Number(this.value).toLocaleString('pt-BR')">
-                                        <div class="legenda-slider"><span>R$ 800</span><span>R$ 12.000+</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-
-          
-                <div class="col-lg-9">
-                    <div class="row g-4">
+            <
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="praia">
-                                <img src="img/pacotes/salvadorP.png" class="card-img-top" alt="Casario histórico de Salvador ao entardecer" loading="lazy">
+                            <article class="card card-pacote" data-categoria="cultural">
+                                <img src="img/pacotes/minasHistoricasP.png" class="card-img-top" alt="Ruas históricas de Ouro Preto, Minas Gerais" loading="lazy">
                                 <div class="card-body">
-                                    <span class="badge badge-categoria mb-2"><i class="bi bi-water"></i> Praia</span>
+                                    <span class="badge badge-categoria mb-2"><i class="bi bi-bank"></i> Cultural</span>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Salvador, BA</div>
-                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.9 (128)</div>
+                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Ouro Preto, Tiradentes...</div>
+                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.7 (82)</div>
                                     </div>
-                                    <h3 class="card-title">Salvador Completo</h3>
+                                    <h3 class="card-title">Minas Histórica</h3>
                                     <div class="duracao mb-3"><i class="bi bi-clock"></i> 5 dias / 4 noites</div>
                                     <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
-                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.590</strong></div>
+                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.190</strong></div>
                                         <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
                                     </div>
                                 </div>
@@ -172,16 +99,73 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="ecoturismo">
-                                <img src="img/pacotes/bonitoP.png" class="card-img-top" alt="Rio de águas transparentes em Bonito" loading="lazy">
+                            <article class="card card-pacote" data-categoria="praia">
+                                <img src="img/pacotes/portoGalinP.png" class="card-img-top" alt="Piscinas naturais de Porto de Galinhas" loading="lazy">
+                                <div class="card-body">
+                                    <span class="badge badge-categoria mb-2"><i class="bi bi-water"></i> Praia</span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Ipojuca, PE</div>
+                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.8 (112)</div>
+                                    </div>
+                                    <h3 class="card-title">Porto de Galinhas</h3>
+                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 6 dias / 5 noites</div>
+                                    <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
+                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.480</strong></div>
+                                        <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <article class="card card-pacote" data-categoria="gastronomico">
+                                <img src="img/pacotes/saboresP.png" class="card-img-top" alt="Prato típico de frutos do mar em Paraty" loading="lazy">
+                                <div class="card-body">
+                                    <span class="badge badge-categoria mb-2"><i class="bi bi-egg-fried"></i> Gastronômico</span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Paraty, RJ</div>
+                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.9 (25)</div>
+                                    </div>
+                                    <h3 class="card-title">Sabores de Paraty</h3>
+                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 3 dias / 2 noites</div>
+                                    <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
+                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.790</strong></div>
+                                        <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 pacote-oculto" data-categoria="praia">
+                            <article class="card card-pacote">
+                                <img src="img/destinos/fernandoNoronhaD.png" class="card-img-top" alt="Falésias e mar azul de Fernando de Noronha" loading="lazy">
+                                <div class="card-body">
+                                    <span class="badge badge-categoria mb-2"><i class="bi bi-water"></i> Praia</span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Fernando de Noronha, PE</div>
+                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 5.0 (203)</div>
+                                    </div>
+                                    <h3 class="card-title">Fernando de Noronha Essencial</h3>
+                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 7 dias / 6 noites</div>
+                                    <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
+                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 6.400</strong></div>
+                                        <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 pacote-oculto" data-categoria="ecoturismo">
+                            <article class="card card-pacote">
+                                <img src="img/destinos/lencoisMaranhenseD.png" class="card-img-top" alt="Lagoas entre as dunas dos Lençóis Maranhenses" loading="lazy">
                                 <div class="card-body">
                                     <span class="badge badge-categoria mb-2"><i class="bi bi-tree"></i> Ecoturismo</span>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Bonito, MS</div>
-                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.9 (95)</div>
+                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Barreirinhas, MA</div>
+                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.9 (67)</div>
                                     </div>
-                                    <h3 class="card-title">Bonito Essencial</h3>
-                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 6 dias / 5 noites</div>
+                                    <h3 class="card-title">Lençóis Maranhenses Essencial</h3>
+                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 5 dias / 4 noites</div>
                                     <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
                                         <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.390</strong></div>
                                         <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
@@ -189,26 +173,94 @@
                                 </div>
                             </article>
                         </div>
+                    </div>
 
-                        <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="aventura">
-                                <img src="img/pacotes/chapadaVP.png" class="card-img-top" alt="Cachoeira na Chapada dos Veadeiros" loading="lazy">
-                                <div class="card-body">
-                                    <span class="badge badge-categoria mb-2"><i class="bi bi-compass"></i> Aventura</span>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="localizacao"><i class="bi bi-geo-alt"></i> Alto Paraíso, GO</div>
-                                        <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.8 (54)</div>
-                                    </div>
-                                    <h3 class="card-title">Chapada dos Veadeiros</h3>
-                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 4 dias / 3 noites</div>
-                                    <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
-                                        <div class="preco-a-partir"><span>A partir de</span><strong>R$ 3.290</strong></div>
-                                        <a href="pacote.html" class="btn btn-primary">Ver detalhes</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                   
+                    <nav class="d-flex justify-content-center pt-5" aria-label="Paginação de resultados">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link rounded-circle mx-1" href="#" aria-label="Página anterior"><i class="bi bi-chevron-left"></i></a></li>
+                            <li class="page-item active" aria-current="page"><a class="page-link rounded-circle mx-1" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1" href="#" aria-label="Próxima página"><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
+           
+            <div class="faixa-personalizado d-flex justify-content-between align-items-center flex-wrap gap-4 my-5">
+                <div>
+                    <h2>Não achou o roteiro perfeito?</h2>
+                    <p class="mb-0">Nossos consultores criam itinerários 100% personalizados de acordo com seus gostos, orçamento e ritmo de viagem.</p>
+                </div>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="sobre.html#depoimentos" class="btn btn-outline-secondary">Ver depoimentos</a>
+                    <a href="pacote.html" class="btn btn-primary">Solicitar roteiro personalizado</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
+    <footer class="rodape">
+        <div class="container">
+            <div class="row gy-5 pb-5 rodape-grade">
+                <div class="col-lg-4 col-md-6 rodape-marca h-card">
+                    <a href="index.html" class="marca">
+                        <img src="img/geral/LogoAgencia.png" alt="">
+                        <span class="nome-marca p-name">Descubra Brasil</span>
+                    </a>
+                    <p class="rodape-tagline">Viva lugares reais</p>
+                    <p>Conectamos você aos melhores destinos do Brasil com experiências autênticas, segurança e responsabilidade.</p>
+                    <div class="rodape-social d-flex gap-2">
+                        <a href="#" aria-label="Descubra Brasil no Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Descubra Brasil no Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Descubra Brasil no YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Descubra Brasil no X"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+
+                <nav class="col-lg-2 col-md-6" aria-label="Navegação do rodapé">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="pacotes.html">Pacotes Exclusivos</a></li>
+                        <li><a href="sobre.html#depoimentos">Depoimentos</a></li>
+                        <li><a href="sobre.html">Sobre nós</a></li>
+                        <li><a href="#" onclick="return false;">Blog de Viagem</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="col-lg-3 col-md-6" aria-label="Informações institucionais">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="#" onclick="return false;">Termos de Uso</a></li>
+                        <li><a href="#" onclick="return false;">Políticas de Privacidade</a></li>
+                        <li><a href="#" onclick="return false;">Ajuda &amp; FAQ</a></li>
+                        <li><a href="#" onclick="return false;">Guia de Sustentabilidade</a></li>
+                        <li><a href="#" onclick="return false;">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="col-lg-3 col-md-6 rodape-certificacao">
+                    <h4>Certificações</h4>
+                    <div class="selo-cadastur" role="img" aria-label="Selo CADASTUR - Ministério do Turismo">
+                        <img src="img/geral/cadastur.png" alt="Selo CADASTUR - Ministério do Turismo">
+                    </div>
+                    <p>Empresa cadastrada no CADASTUR e comprometida com o turismo responsável.</p>
+                </div>
+            </div>
+
+            <div class="rodape-inferior d-flex justify-content-between flex-wrap gap-2">
+                <p class="mb-0">&copy; 2026 Descubra Brasil Turismo. Todos os direitos reservados.</p>
+                <p class="mb-0">Site desenvolvido com amor para viajantes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div>fhfggfhfghfhfgfhffhfhgfhgfhg</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

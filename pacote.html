@@ -262,35 +262,53 @@
 
 
             <section class="py-4" aria-label="Condições do pacote">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="caixa-lista-inclusos">
-                            <h3><span class="icone-check-circulo"><i class="bi bi-check-lg"></i></span> O que está
-                                incluso</h3>
-                            <ul>
-                                <li><span class="pontinho-verde"></span> Transfer ida e volta Campo Grande – Bonito</li>
-                                <li><span class="pontinho-verde"></span> 4 noites de hospedagem com café da manhã</li>
-                                <li><span class="pontinho-verde"></span> Todos os passeios descritos no roteiro</li>
-                                <li><span class="pontinho-verde"></span> Guias locais credenciados</li>
-                                <li><span class="pontinho-verde"></span> Transporte durante os passeios</li>
-                                <li><span class="pontinho-verde"></span> Seguro viagem</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="caixa-lista-inclusos">
-                            <h3><span class="icone-x-circulo"><i class="bi bi-x-lg"></i></span> O que não está incluso
-                            </h3>
-                            <ul>
-                                <li><span class="pontinho-vermelho"></span> Passagens aéreas</li>
-                                <li><span class="pontinho-vermelho"></span> Refeições não mencionadas</li>
-                                <li><span class="pontinho-vermelho"></span> Taxas de ingresso cobradas em cada atrativo
-                                    (valores variam)</li>
-                                <li><span class="pontinho-vermelho"></span> Despesas pessoais</li>
-                                <li><span class="pontinho-vermelho"></span> Bebidas</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="tabela-condicoes-wrap">
+                    <table class="tabela-condicoes">
+                        <caption class="visually-hidden">Comparativo do que está incluso e do que não está incluso no pacote</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span class="titulo-coluna">
+                                        <span class="icone-check-circulo"><i class="bi bi-check-lg"></i></span>
+                                        O que está incluso
+                                    </span>
+                                </th>
+                                <th scope="col">
+                                    <span class="titulo-coluna">
+                                        <span class="icone-x-circulo"><i class="bi bi-x-lg"></i></span>
+                                        O que não está incluso
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> Transfer ida e volta Campo Grande – Bonito</td>
+                                <td><span class="pontinho-vermelho"></span> Passagens aéreas</td>
+                            </tr>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> 4 noites de hospedagem com café da manhã</td>
+                                <td><span class="pontinho-vermelho"></span> Refeições não mencionadas</td>
+                            </tr>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> Todos os passeios descritos no roteiro</td>
+                                <td><span class="pontinho-vermelho"></span> Taxas de ingresso cobradas em cada atrativo
+                                    (valores variam)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> Guias locais credenciados</td>
+                                <td><span class="pontinho-vermelho"></span> Despesas pessoais</td>
+                            </tr>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> Transporte durante os passeios</td>
+                                <td><span class="pontinho-vermelho"></span> Bebidas</td>
+                            </tr>
+                            <tr>
+                                <td><span class="pontinho-verde"></span> Seguro viagem</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
@@ -422,8 +440,8 @@
             </div>
         </section>
     </main>
-    
-<footer class="rodape">
+
+    <footer class="rodape">
         <div class="container">
             <div class="row gy-5 pb-5 rodape-grade">
                 <div class="col-lg-4 col-md-6 rodape-marca h-card">
@@ -435,39 +453,40 @@
                     <p>Conectamos você aos melhores destinos do Brasil com experiências autênticas, segurança e
                         responsabilidade.</p>
                     <div class="rodape-social d-flex gap-2">
-                        <a href="#" aria-label="Descubra Brasil no Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="Descubra Brasil no Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="Descubra Brasil no YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" aria-label="Descubra Brasil no X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Descubra Brasil no Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/?locale=pt_BR" aria-label="Descubra Brasil no Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.youtube.com/" aria-label="Descubra Brasil no YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://x.com/?lang=pt" aria-label="Descubra Brasil no X"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
 
-                <nav class="col-lg-2 col-md-6" aria-label="Navegação do rodapé">
-                    <h4>Navegação</h4>
+                <div class="col-lg-2 col-md-6">
+                    <h3>Navegação</h3>
+                    <nav aria-label="Navegação do rodapé">
                     <ul>
                         <li><a href="destinos.html">Destinos</a></li>
                         <li><a href="pacotes.html">Pacotes Exclusivos</a></li>
                         <li><a href="sobre.html#depoimentos">Depoimentos</a></li>
                         <li><a href="sobre.html">Sobre nós</a></li>
-                        <li><a href="#" onclick="return false;">Blog de Viagem</a></li>
                     </ul>
-                </nav>
+                    </nav>
+                </div>
 
-                <nav class="col-lg-3 col-md-6" aria-label="Informações institucionais">
-                    <h4>Informações</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Informações</h3>
+                    <nav aria-label="Informações institucionais">
                     <ul>
-                        <li><a href="#" onclick="return false;">Termos de Uso</a></li>
-                        <li><a href="#" onclick="return false;">Políticas de Privacidade</a></li>
-                        <li><a href="#" onclick="return false;">Ajuda &amp; FAQ</a></li>
-                        <li><a href="#" onclick="return false;">Guia de Sustentabilidade</a></li>
-                        <li><a href="#" onclick="return false;">Contato</a></li>
+                        <li><a href="sobre.html" target="_blank">Termos de Uso</a></li>
+                        <li><a href="sobre.html" target="_blank">Políticas de Privacidade</a></li>
+                        <li><a href="sobre.html" target="_blank">Ajuda</a></li>
                     </ul>
-                </nav>
+                    </nav>
+                </div>
 
                 <div class="col-lg-3 col-md-6 rodape-certificacao">
-                    <h4>Certificações</h4>
+                    <h3>Certificações</h3>
                     <div class="selo-cadastur" role="img" aria-label="Selo CADASTUR - Ministério do Turismo">
-                        <img src="img/geral/cadastur.png" alt="Selo CADASTUR - Ministério do Turismo">
+                        <img src="img/geral/logoCadasturB.png" alt="Selo CADASTUR - Ministério do Turismo">
                     </div>
                     <p>Empresa cadastrada no CADASTUR e comprometida com o turismo responsável.</p>
                 </div>
@@ -481,8 +500,8 @@
     </footer>
 
   
-    <div class="modal fade modal-lightbox" id="modalGaleria" tabindex="-1" aria-labelledby="modalGaleriaTitulo"
-        aria-hidden="true">
+    <div class="modal fade modal-lightbox" id="modalGaleria" tabindex="-1" role="dialog" aria-modal="true"
+        aria-labelledby="modalGaleriaTitulo" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -495,7 +514,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>

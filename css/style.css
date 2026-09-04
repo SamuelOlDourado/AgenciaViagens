@@ -146,9 +146,51 @@ p {
     gap: 6px;
     transition: gap var(--transicao);
 }
- 
+
 .link-ver-mais:hover {
     gap: 10px;
     text-decoration: underline;
     color: var(--cor-verde-escuro);
+}
+
+
+.btn {
+    font-weight: 700;
+    border-radius: var(--bs-border-radius-pill);
+    padding: 0.85rem 1.7rem;
+    transition: transform var(--transicao), box-shadow var(--transicao), background-color var(--transicao);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--cor-laranja);
+    --bs-btn-border-color: var(--cor-laranja);
+    --bs-btn-hover-bg: var(--cor-laranja-escuro);
+    --bs-btn-hover-border-color: var(--cor-laranja-escuro);
+    --bs-btn-active-bg: var(--cor-laranja-escuro);
+    --bs-btn-active-border-color: var(--cor-laranja-escuro);
+    box-shadow: 0 8px 20px rgba(238, 122, 52, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    --bs-btn-color: #fff;
+    --bs-btn-border-color: rgba(255, 255, 255, 0.6);
+    --bs-btn-hover-bg: rgba(255, 255, 255, 0.12);
+    --bs-btn-hover-border-color: rgba(255, 255, 255, 0.6);
+    --bs-btn-hover-color: #fff;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--cor-verde-escuro);
+    --bs-btn-border-color: var(--cor-verde-escuro);
+    --bs-btn-hover-bg: var(--cor-verde);
+    --bs-btn-hover-border-color: var(--cor-verde);
+}
+
+.btn-sm-pill {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
 }

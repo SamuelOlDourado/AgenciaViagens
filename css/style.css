@@ -1,0 +1,49 @@
+:root {
+    --cor-azul: #0b1220;
+    --cor-azul-clara: #16213a;
+    --cor-verde: #1c7a4a;
+    --cor-verde-escuro: #145c38;
+    --cor-verde-fundo: #e7f3ec;
+    --cor-laranja: #ee7a34;
+    --cor-laranja-escuro: #d9631e;
+    --cor-branco: #ffffff;
+    --cor-texto: #1f2937;
+    --cor-texto-secundario: #6b7280;
+    --cor-fundo: #f9f8f6;
+    --cor-fundo-creme: #f4f0e6;
+    --cor-borda: #e5e2da;
+ 
+    --fonte-titulo: "Playfair Display", "Georgia", serif;
+    --fonte-corpo: "Inter", "Segoe UI", sans-serif;
+    --fonte-assinatura: "Sacramento", cursive;
+ 
+    --sombra-suave: 0 10px 30px rgba(11, 18, 32, 0.08);
+    --sombra-card: 0 4px 18px rgba(11, 18, 32, 0.07);
+    --transicao: 0.25s ease;
+ 
+    
+    --bs-body-font-family: var(--fonte-corpo);
+    --bs-body-color: var(--cor-texto);
+    --bs-body-bg: var(--cor-fundo);
+    --bs-heading-color: var(--cor-azul);
+ 
+    --bs-primary: var(--cor-laranja);
+    --bs-primary-rgb: 238, 122, 52;
+    --bs-secondary: var(--cor-verde);
+    --bs-secondary-rgb: 28, 122, 74;
+    --bs-dark: var(--cor-azul);
+    --bs-dark-rgb: 11, 18, 32;
+    --bs-light: var(--cor-fundo-creme);
+    --bs-light-rgb: 244, 240, 230;
+ 
+    --bs-border-color: var(--cor-borda);
+    --bs-border-radius: 14px;
+    --bs-border-radius-sm: 8px;
+    --bs-border-radius-lg: 18px;
+    --bs-border-radius-xl: 22px;
+    --bs-border-radius-pill: 999px;
+ 
+    --bs-link-color: var(--cor-verde);
+    --bs-link-hover-color: var(--cor-verde-escuro);
+    --bs-link-decoration: none;
+}

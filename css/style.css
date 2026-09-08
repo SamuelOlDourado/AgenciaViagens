@@ -403,3 +403,114 @@ p {
     position: relative;
     z-index: 2;
 }
+
+.card-pacote {
+    border: none;
+    border-radius: var(--bs-border-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    transition: transform var(--transicao), box-shadow var(--transicao);
+    height: 100%;
+}
+
+.card-pacote:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(11, 18, 32, 0.14);
+}
+
+.card-pacote .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-pacote .card-body {
+    padding: 20px 22px 22px;
+}
+
+.card-pacote .duracao {
+    color: var(--cor-texto-secundario);
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.card-pacote .avaliacao {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cor-azul);
+}
+
+.card-pacote .avaliacao i {
+    color: #f5b400;
+}
+
+.card-pacote .localizacao {
+    color: var(--cor-texto-secundario);
+    font-size: 0.85rem;
+}
+
+.card-pacote .card-title {
+    font-size: 1.2rem;
+    margin: 2px 0 8px;
+}
+
+.card-pacote .rodape-card {
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.preco-a-partir span {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.preco-a-partir strong {
+    color: var(--cor-laranja);
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+}
+
+.card-pacote .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* BARRA DE BENEFÍCIOS */
+.barra-beneficios {
+    background-color: var(--cor-azul);
+    padding: 56px 0;
+}
+
+.icone-beneficio {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(52, 132, 238, 0.12);
+    border: 1px solid rgba(52, 111, 238, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.icone-beneficio img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.item-beneficio h3 {
+    color: var(--cor-branco);
+    font-size: 1.05rem;
+    font-family: var(--fonte-corpo);
+    font-weight: 700;
+}
+
+.item-beneficio p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.88rem;
+    margin-bottom: 0;
+}

@@ -384,3 +384,22 @@ p {
     font-size: 0.92rem;
     line-height: 1.25;
 }
+
+.badge {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5em 0.8em;
+    border-radius: var(--bs-border-radius-pill);
+}
+
+.badge-categoria {
+    background-color: var(--cor-verde);
+    color: var(--cor-branco);
+}
+
+.badge-flutuante {
+    margin-top: -34px;
+    position: relative;
+    z-index: 2;
+}

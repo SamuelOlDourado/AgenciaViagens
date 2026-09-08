@@ -194,3 +194,58 @@ p {
     padding: 0.6rem 1.1rem;
     font-size: 0.85rem;
 }
+
+.navbar-descubra {
+    background-color: var(--cor-azul);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-descubra .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cor-branco);
+}
+
+.navbar-descubra .navbar-brand img {
+    width: 45px;
+    height: 45px;
+}
+
+.navbar-descubra .navbar-brand span {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.navbar-descubra .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    position: relative;
+}
+
+.navbar-descubra .nav-link:hover,
+.navbar-descubra .nav-link.active {
+    color: var(--cor-branco);
+}
+
+.navbar-descubra .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 2px;
+    height: 2px;
+    background-color: var(--cor-laranja);
+    border-radius: 2px;
+}
+
+.nav-btn {
+    height: 40px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

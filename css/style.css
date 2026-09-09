@@ -716,3 +716,125 @@ p {
     text-decoration: underline;
     color: var(--cor-verde-escuro);
 }
+
+.rodape {
+    background-color: var(--cor-azul);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 70px 0 0;
+
+}
+
+.rodape-marca .navbar-brand,
+.rodape-marca a.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cor-branco);
+    margin-bottom: 6px;
+}
+
+.rodape-marca img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.rodape-marca span.nome-marca {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.rodape-tagline {
+    color: var(--cor-laranja);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 4px 0 16px;
+}
+
+.rodape-marca p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    max-width: 320px;
+}
+
+.rodape-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-branco);
+    transition: background-color var(--transicao);
+}
+
+.rodape-social a:hover {
+    background-color: var(--cor-laranja);
+}
+
+.rodape h3 {
+    color: var(--cor-branco);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.rodape ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rodape ul li {
+    margin-bottom: 12px;
+}
+
+.rodape ul a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    transition: color var(--transicao);
+}
+
+.rodape ul a:hover {
+    color: var(--cor-branco);
+}
+
+.selo-cadastur {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-verde-escuro);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    padding: 9px 16px;
+    border-radius: var(--bs-border-radius-sm);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.selo-cadastur i {
+    color: var(--cor-laranja);
+    font-size: 1.1rem;
+}
+
+.selo-cadastur img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.rodape-certificacao p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.rodape-inferior {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 22px 0;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+}

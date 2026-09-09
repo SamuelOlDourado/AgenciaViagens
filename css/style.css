@@ -649,3 +649,70 @@ p {
     font-size: 0.92rem;
     margin-bottom: 0;
 }
+
+.cta-final-caixa {
+    position: relative;
+    border-radius: var(--bs-border-radius-xl);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.cta-final-caixa::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(8, 13, 27, 0.15), rgba(8, 13, 27, 0.05));
+}
+
+.cta-final-painel {
+    position: relative;
+    z-index: 2;
+    margin: 28px;
+    background-color: var(--cor-branco);
+    border-radius: var(--bs-border-radius);
+    padding: 40px;
+    box-shadow: var(--sombra-suave);
+}
+
+.lista-check {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-check li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+}
+
+.lista-check li:last-child {
+    margin-bottom: 0;
+}
+
+.lista-check i {
+    color: var(--cor-verde);
+    font-size: 1.1rem;
+}
+
+.link-whatsapp {
+    color: var(--cor-verde);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+}
+
+.link-whatsapp:hover {
+    text-decoration: underline;
+    color: var(--cor-verde-escuro);
+}

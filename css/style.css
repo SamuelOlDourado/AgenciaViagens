@@ -949,3 +949,114 @@ p {
     font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.5);
 }
+.form-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--cor-azul);
+}
+
+.form-control,
+.form-select {
+    border: 1.5px solid var(--cor-borda);
+    border-radius: var(--bs-border-radius-sm);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 0.7rem 1rem;
+}
+
+.form-check-input {
+    width: 1.1em;
+    height: 1.1em;
+    margin-top: 0.2em;
+    border-color: var(--cor-borda);
+}
+
+.form-check-input:checked {
+    background-color: var(--cor-verde);
+    border-color: var(--cor-verde);
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: var(--cor-verde);
+}
+
+.form-range::-moz-range-thumb {
+    background-color: var(--cor-verde);
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: var(--cor-borda);
+}
+
+.nota-formulario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-texto-secundario);
+    font-size: 0.82rem;
+    justify-content: center;
+}
+
+.alert-success {
+    background-color: var(--cor-verde-fundo);
+    color: var(--cor-verde-escuro);
+    border: 1px solid var(--cor-verde);
+    font-weight: 600;
+}
+
+.invalid-feedback {
+    font-size: 0.8rem;
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+}
+
+.breadcrumb-item a {
+    color: var(--cor-texto-secundario);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--cor-verde);
+}
+
+.breadcrumb-item.active {
+    color: var(--cor-verde);
+    font-weight: 600;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--cor-texto-secundario);
+}
+
+.pagination .page-link {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-azul);
+    border: 1px solid var(--cor-borda);
+    font-weight: 600;
+    padding: 0;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--cor-verde);
+    border-color: var(--cor-verde);
+    color: var(--cor-branco);
+}
+
+.pagination .page-link:hover {
+    border-color: var(--cor-verde);
+    color: var(--cor-verde);
+}
+
+.pagination .page-link:focus {
+    box-shadow: none;
+}

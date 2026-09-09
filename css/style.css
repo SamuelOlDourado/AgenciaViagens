@@ -564,3 +564,88 @@ p {
     font-size: 0.85rem;
     margin-bottom: 0;
 }
+
+.aspas {
+    font-family: var(--fonte-titulo);
+    font-size: 6rem;
+    color: var(--cor-laranja);
+    line-height: 1;
+}
+
+.carousel-depoimento blockquote {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-azul);
+    line-height: 1.4;
+}
+
+.carousel-depoimento .autor-nome {
+    font-weight: 700;
+    color: var(--cor-azul);
+    margin-bottom: 0;
+}
+
+.carousel-depoimento .autor-local {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.carousel-depoimento .carousel-indicators {
+    position: static;
+    justify-content: flex-start;
+    margin: 24px 0 0;
+}
+
+.carousel-depoimento .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--cor-borda);
+    opacity: 1;
+    border: none;
+}
+
+.carousel-depoimento .carousel-indicators .active {
+    background-color: var(--cor-verde);
+    transform: scale(1.3);
+}
+
+.card-depoimento {
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--bs-border-radius);
+    padding: 26px;
+    box-shadow: var(--sombra-card);
+    height: 100%;
+}
+
+.autor-depoimento img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.autor-depoimento strong {
+    display: block;
+    color: var(--cor-azul);
+    font-size: 0.95rem;
+}
+
+.autor-depoimento span {
+    font-size: 0.82rem;
+    color: var(--cor-texto-secundario);
+}
+
+.estrelas {
+    color: #f5b400;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.card-depoimento p {
+    color: var(--cor-texto);
+    font-size: 0.92rem;
+    margin-bottom: 0;
+}

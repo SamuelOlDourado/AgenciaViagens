@@ -48,15 +48,10 @@
     --bs-link-decoration: none;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
- 
-html {
-    scroll-behavior: smooth;
 }
  
 body {
@@ -64,6 +59,7 @@ body {
     font-family: var(--fonte-corpo);
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
+    padding-top: 75px;
 }
  
 img {
@@ -195,6 +191,14 @@ p {
     font-size: 0.85rem;
 }
 
+.cabecalho {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
 .navbar-descubra {
     background-color: var(--cor-azul);
     padding-top: 10px;
@@ -257,6 +261,22 @@ p {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+}
+
+.fundoI {
+    background-image: url('../img/home/imgHero.png');
+}
+
+.fundoD{
+    background-image: url('../img/destinos/fundoHeroDestinos.png');
+}
+
+.fundoP {
+    background-image: url('../img/pacotes/pacotesHero.png');
+}
+
+.fundoS{
+    background-image: url('../img/sobre/sobreHero.png');
 }
 
 .hero::before {

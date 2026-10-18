@@ -9,10 +9,10 @@
     <link rel="canonical" href="https://www.descubrabrasil.com.br/">
     <meta property="og:title" content="Descubra Brasil | Viva lugares reais">
     <meta property="og:description" content="Roteiros exclusivos para quem busca vivências autênticas, belas paisagens e experiências que ficam para sempre.">
-    <meta property="og:image" content="img/home/fundoHero.png">
+    <meta property="og:image" content="img/home/imgHero.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <link rel="icon" href="img/geral/LogoAgencia.png" type="image/svg+xml">
+    <link rel="icon" href="img/geral/LogoAgencia.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -20,11 +20,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <header class="cabecalho">
+
+    <header class="cabecalho">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-descubra">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/geral/LogoAgencia.png" alt="Descubra Brasil - página inicial" width="10">
+                    <img src="img/geral/LogoAgencia.png" alt="" width="45" height="45">
                     <span>Descubra Brasil</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal"
@@ -43,9 +44,9 @@
                 </div>
             </div>
         </nav>
-    </header> 
+    </header>
 
-    <main id="conteudo-principal">
+    <main id="conteudo-principal" tabindex="-1">
 
         <section class="hero fundoI">
             <div class="container">
@@ -55,12 +56,12 @@
                         e experiências que ficam para sempre.</p>
                     <div class="d-flex flex-column flex-sm-row gap-3">
                         <a href="pacotes.html" class="btn btn-primary">Explorar pacotes</a>
-                        <a href="sobre.html" class="btn btn-outline-light">Falar com especialistas</a>
+                        <a href="https://wa.me/5500000000000" class="btn btn-outline-light" target="_blank"
+                            rel="noopener">Falar com especialistas</a>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <section class="secao" aria-labelledby="titulo-pacotes-populares">
             <div class="container">
@@ -73,13 +74,12 @@
                             class="bi bi-arrow-right"></i></a>
                 </div>
 
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6">
                         <article class="card card-pacote">
-                            <img src="img/home/FernandoNoronha.png" class="card-img-top"
-                                alt="Vista aérea das praias e falésias de Fernando de Noronha" loading="lazy">
+                            <img src="img/home/FernandoNoronha.png" class="card-img-top" alt="Vista aérea das praias e falésias de Fernando de Noronha" loading="lazy">
                             <div class="card-body">
-                                <span class="badge badge-categoria badge-flutuante"><i class="bi bi-geo-alt-fill"></i>
+                                <span class="badge badge-categoria"><i class="bi bi-geo-alt-fill"></i>
                                     Praia</span>
                                 <div class="duracao mb-2"><i class="bi bi-clock"></i> 7 dias</div>
                                 <h3 class="card-title">Fernando de Noronha</h3>
@@ -96,10 +96,9 @@
 
                     <div class="col-lg-4 col-md-6">
                         <article class="card card-pacote">
-                            <img src="img/home/ChapadaVeadeiros.png" class="card-img-top"
-                                alt="Cachoeira em meio ao cerrado na Chapada dos Veadeiros" loading="lazy">
+                            <img src="img/home/ChapadaVeadeiros.png" class="card-img-top" alt="Cachoeira em meio ao cerrado na Chapada dos Veadeiros" loading="lazy">
                             <div class="card-body">
-                                <span class="badge badge-categoria badge-flutuante"><i class="bi bi-geo-alt-fill"></i>
+                                <span class="badge badge-categoria"><i class="bi bi-geo-alt-fill"></i>
                                     Aventura</span>
                                 <div class="duracao mb-2"><i class="bi bi-clock"></i> 5 dias</div>
                                 <h3 class="card-title">Chapada dos Veadeiros</h3>
@@ -116,10 +115,9 @@
 
                     <div class="col-lg-4 col-md-6">
                         <article class="card card-pacote">
-                            <img src="img/home/LencoisMaranhenses.png" class="card-img-top"
-                                alt="Lagoas de água doce entre as dunas dos Lençóis Maranhenses" loading="lazy">
+                            <img src="img/home/LencoisMaranhenses.png" class="card-img-top" alt="Lagoas de água doce entre as dunas dos Lençóis Maranhenses" loading="lazy">
                             <div class="card-body">
-                                <span class="badge badge-categoria badge-flutuante"><i class="bi bi-geo-alt-fill"></i>
+                                <span class="badge badge-categoria"><i class="bi bi-geo-alt-fill"></i>
                                     Natureza</span>
                                 <div class="duracao mb-2"><i class="bi bi-clock"></i> 4 dias</div>
                                 <h3 class="card-title">Lençóis Maranhenses</h3>
@@ -138,43 +136,43 @@
         </section>
 
 
-        <section class="barra-beneficios" aria-label="Benefícios de viajar com a Descubra Brasil">
+        <section class="barra-beneficios" aria-labelledby="titulo-beneficios">
             <div class="container text-center">
                 <div class="row g-4">
-                    <div class="col-lg-3 col-6">
+                    <div class="col-6 col-lg-3">
                         <div class="item-beneficio d-flex flex-column align-items-center gap-3">
                             <div class="icone-beneficio">
-                                <img src="img/home/cartaoIcone.svg" alt="" width="24" height="24">
+                                <img src="img/home/cartaoIcone.svg" alt="icone de cartão de crédito" width="24" height="24">
                             </div>
                             <h3>Pagamento facilitado</h3>
                             <p>Em até 12x no cartão</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6">
+                    <div class="col-6 col-lg-3">
                         <div class="item-beneficio d-flex flex-column align-items-center gap-3">
                             <div class="icone-beneficio">
-                                <img src="img/home/guiaIcone.svg" alt="" width="24" height="24">
+                                <img src="img/home/guiaIcone.svg" alt="icone de guia local" width="24" height="24">
                             </div>
                             <h3>Guia local especializado</h3>
                             <p>Experiências autênticas</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6">
+                    <div class="col-6 col-lg-3">
                         <div class="item-beneficio d-flex flex-column align-items-center gap-3">
                             <div class="icone-beneficio">
-                                <img src="img/home/suporteIcone.svg" alt="" width="24" height="24">
+                                <img src="img/home/suporteIcone.svg" alt="icone de suporte" width="24" height="24">
                             </div>
-                            <h3>Suporte antes e durante</h3>
-                            <p>sua viagem</p>
+                            <h3>Suporte antes e durante a viagem</h3>
+                            <p>Conte com a gente do início ao fim</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-6">
+                    <div class="col-6 col-lg-3">
                         <div class="item-beneficio d-flex flex-column align-items-center gap-3">
                             <div class="icone-beneficio">
-                                <img src="img/home/folhaIcone.svg" alt="" width="24" height="24">
+                                <img src="img/home/folhaIcone.svg" alt="icone de folha" width="24" height="24">
                             </div>
                             <h3>Turismo responsável</h3>
                             <p>Respeito e sustentabilidade</p>
@@ -192,42 +190,41 @@
                         <span class="eyebrow">Encontre seu estilo de viagem</span>
                         <h2 id="titulo-categorias" class="mb-0">Explore por categoria</h2>
                     </div>
-                    <a href="pacotes.html" class="link-ver-mais">Ver todas as categorias <i
-                            class="bi bi-arrow-right"></i></a>
+                    <a href="pacotes.html" class="link-ver-mais">Ver todas as categorias <i class="bi bi-arrow-right"></i></a>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-lg col-md-4 col-6">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
                         <a href="pacotes.html#ecoturismo" class="card-categoria">
-                            <img src="img/home/MontanhaIcone.svg" alt="" width="40" height="40">
+                            <img src="img/home/MontanhaIcone.svg" alt="Icone de Montanha representando ecoturismo" width="40" height="40">
                             <h3>Ecoturismo</h3>
                             <p>Cachoeiras, serras e paisagens incríveis</p>
                         </a>
                     </div>
-                    <div class="col-lg col-md-4 col-6">
+                    <div class="col-sm-6 col-lg-4">
                         <a href="pacotes.html#cultural" class="card-categoria">
-                            <img src="img/home/culturaIcone.svg" alt="" width="40" height="40">
+                            <img src="img/home/culturaIcone.svg" alt="Icone de Cultura representando turismo cultural" width="40" height="40">
                             <h3>Cultural</h3>
                             <p>História, cultura e cidades encantadoras</p>
                         </a>
                     </div>
-                    <div class="col-lg col-md-4 col-6">
+                    <div class="col-sm-6 col-lg-4">
                         <a href="pacotes.html#praia" class="card-categoria">
-                            <img src="img/home/PraiaIcone.svg" alt="" width="40" height="40">
+                            <img src="img/home/PraiaIcone.svg" alt="Icone de Praia representando turismo de praia" width="40" height="40">
                             <h3>Praia</h3>
                             <p>Sol, mar e as melhores praias do Brasil</p>
                         </a>
                     </div>
-                    <div class="col-lg col-md-4 col-6">
+                    <div class="col-sm-6 col-lg-6">
                         <a href="pacotes.html#aventura" class="card-categoria">
-                            <img src="img/home/aventuraIcone.svg" alt="" width="40" height="40">
+                            <img src="img/home/aventuraIcone.svg" alt="Icone de Aventura representando turismo de aventura" width="40" height="40">
                             <h3>Aventura</h3>
                             <p>Trilhas, esportes e muita adrenalina</p>
                         </a>
                     </div>
-                    <div class="col-lg col-md-4 col-6">
+                    <div class="col-sm-6 col-lg-6">
                         <a href="pacotes.html#gastronomico" class="card-categoria">
-                            <img src="img/home/comidaIcone.svg" alt="" width="40" height="40">
+                            <img src="img/home/comidaIcone.svg" alt="Icone de Comida representando turismo gastronômico" width="40" height="40">
                             <h3>Gastronômico</h3>
                             <p>Sabores locais e experiências únicas</p>
                         </a>
@@ -236,10 +233,9 @@
             </div>
         </section>
 
-
         <section class="secao" aria-labelledby="titulo-depoimentos">
             <div class="container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4">
                     <div class="col-lg-5">
                         <span class="eyebrow">O que nossos viajantes dizem</span>
                         <h2 id="titulo-depoimentos">Histórias reais<br>de quem viajou</h2>
@@ -272,7 +268,7 @@
                                     <p class="autor-local">Vitória - ES</p>
                                 </div>
                             </div>
-                            <div class="carousel-indicators" data-bs-target="#carrosselDepoimentos">
+                            <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carrosselDepoimentos" data-bs-slide-to="0"
                                     class="active" aria-current="true" aria-label="Depoimento 1"></button>
                                 <button type="button" data-bs-target="#carrosselDepoimentos" data-bs-slide-to="1"
@@ -287,22 +283,29 @@
         </section>
 
 
-        <section class="pb-5" aria-labelledby="titulo-cta-final">
+        <section class="pb-5" aria-labelledby="titulo-cta-final-sobre">
             <div class="container">
-                <div class="cta-final-caixa" style="background-image: url('img/home/PraiaFoooter.png');">
+                <div class="cta-final-caixa">
                     <div class="cta-final-painel d-flex align-items-center justify-content-between flex-wrap gap-4">
-                        <h2 id="titulo-cta-final" class="mb-0" style="font-size:1.8rem; max-width:320px;">Pronto para
-                            viver sua próxima aventura?</h2>
+
+                        <h2 id="titulo-cta-final-sobre" class="mb-0 cta-final-titulo">
+                            Pronto para viver sua próxima aventura?
+                        </h2>
+
                         <ul class="lista-check">
                             <li><i class="bi bi-check-square-fill"></i> Roteiros sob medida para você</li>
                             <li><i class="bi bi-check-square-fill"></i> Atendimento rápido</li>
                             <li><i class="bi bi-check-square-fill"></i> As melhores experiências do Brasil</li>
                         </ul>
-                        <div class="d-flex flex-column align-items-start gap-3">
+
+                        <div class="d-flex flex-column align-items-center align-items-md-start gap-3">
                             <a href="pacotes.html" class="btn btn-primary">Quero minha viagem</a>
-                            <a href="https://wa.me/5500000000000" class="link-whatsapp" target="_blank"
-                                rel="noopener"><i class="bi bi-whatsapp"></i> Falar no WhatsApp</a>
+
+                            <a href="https://wa.me/5500000000000" class="link-whatsapp" target="_blank" rel="noopener">
+                                <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+                            </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -310,30 +313,30 @@
     </main>
 
 
+
     <footer class="rodape">
         <div class="container">
             <div class="row gy-5 pb-5 rodape-grade">
-                <div class="col-lg-4 col-md-6 rodape-marca h-card">
-                    <a href="index.html" class="marca">
-                        <img src="img/geral/LogoAgencia.png" alt="">
+
+                <div class="col-lg-4 col-md-6 rodape-marca h-card text-center text-lg-start">
+                    <a href="index.html" class="marca justify-content-center justify-content-lg-start">
+                        <img src="img/geral/LogoAgencia.png" alt="Logo da Agência de Viagens Descubra Brasil">
                         <span class="nome-marca p-name">Descubra Brasil</span>
                     </a>
+
                     <p class="rodape-tagline">Viva lugares reais</p>
                     <p>Conectamos você aos melhores destinos do Brasil com experiências autênticas, segurança e
                         responsabilidade.</p>
-                    <div class="rodape-social d-flex gap-2">
-                        <a href="https://www.instagram.com/" aria-label="Descubra Brasil no Instagram"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="https://www.facebook.com/?locale=pt_BR" aria-label="Descubra Brasil no Facebook"><i
-                                class="bi bi-facebook"></i></a>
-                        <a href="https://www.youtube.com/" aria-label="Descubra Brasil no YouTube"><i
-                                class="bi bi-youtube"></i></a>
-                        <a href="https://x.com/?lang=pt" aria-label="Descubra Brasil no X"><i
-                                class="bi bi-twitter-x"></i></a>
+
+                    <div class="rodape-social d-flex justify-content-center justify-content-lg-start gap-2">
+                        <a href="https://www.instagram.com/" aria-label="Descubra Brasil no Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/?locale=pt_BR" aria-label="Descubra Brasil no Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.youtube.com/" aria-label="Descubra Brasil no YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://x.com/?lang=pt" aria-label="Descubra Brasil no X"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-6 text-center text-lg-start">
                     <h3>Navegação</h3>
                     <nav aria-label="Navegação do rodapé">
                         <ul>
@@ -345,27 +348,29 @@
                     </nav>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 text-center text-lg-start">
                     <h3>Informações</h3>
                     <nav aria-label="Informações institucionais">
                         <ul>
-                            <li><a href="sobre.html" target="_blank">Termos de Uso</a></li>
-                            <li><a href="sobre.html" target="_blank">Políticas de Privacidade</a></li>
-                            <li><a href="sobre.html" target="_blank">Ajuda</a></li>
+                            <li><a href="sobre.html">Termos de Uso</a></li>
+                            <li><a href="sobre.html">Políticas de Privacidade</a></li>
+                            <li><a href="sobre.html">Ajuda</a></li>
                         </ul>
                     </nav>
                 </div>
 
-                <div class="col-lg-3 col-md-6 rodape-certificacao">
+                <div class="col-lg-3 col-md-6 rodape-certificacao text-center text-lg-start">
                     <h3>Certificações</h3>
-                    <div class="selo-cadastur" role="img" aria-label="Selo CADASTUR - Ministério do Turismo">
+                    <div class="selo-cadastur mx-auto mx-lg-0" role="img"
+                        aria-label="Selo CADASTUR - Ministério do Turismo">
                         <img src="img/geral/logoCadasturB.png" alt="Selo CADASTUR - Ministério do Turismo">
                     </div>
                     <p>Empresa cadastrada no CADASTUR e comprometida com o turismo responsável.</p>
                 </div>
+
             </div>
 
-            <div class="rodape-inferior d-flex justify-content-between flex-wrap gap-2">
+            <div class="rodape-inferior d-flex justify-content-between align-items-center flex-wrap gap-2 text-center">
                 <p class="mb-0">&copy; 2026 Descubra Brasil Turismo. Todos os direitos reservados.</p>
                 <p class="mb-0">Site desenvolvido com amor para viajantes.</p>
             </div>
@@ -375,4 +380,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

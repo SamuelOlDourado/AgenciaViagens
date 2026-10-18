@@ -12,7 +12,7 @@
     <meta property="og:image" content="img/pacotes/pacotesHero.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <link rel="icon" href="img/geral/LogoAgencia.png" type="image/svg+xml">
+    <link rel="icon" href="img/geral/LogoAgencia.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -20,11 +20,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="cabecalho">   
+
+    <header class="cabecalho">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-descubra">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/geral/LogoAgencia.png" alt="Descubra Brasil - página inicial" width="46" height="46">
+                    <img src="img/geral/LogoAgencia.png" alt="Logo Descubra Brasil" width="45" height="45">
                     <span>Descubra Brasil</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal"
@@ -35,7 +36,8 @@
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
                         <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
                         <li class="nav-item"><a class="nav-link" href="destinos.html">Destinos</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="pacotes.html">Pacotes</a>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="pacotes.html">Pacotes</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre nós</a></li>
                     </ul>
@@ -45,9 +47,9 @@
         </nav>
     </header>
 
-    <main id="conteudo-principal">
+    <main id="conteudo-principal" tabindex="-1">
 
-        <section class="hero fundoP">
+        <section class="hero hero-compacto fundoP">
             <div class="container">
                 <div class="hero-conteudo">
                     <h1>Descubra os destinos mais incríveis do Brasil</h1>
@@ -74,8 +76,7 @@
                 </div>
                 <label class="d-flex align-items-center gap-2 seletor-ordenacao">
                     <i class="bi bi-sort-down"></i>
-                    <select class="form-select border-0 bg-transparent p-0" aria-label="Ordenar pacotes"
-                        style="box-shadow:none;">
+                    <select class="form-select border-0 bg-transparent" aria-label="Ordenar pacotes">
                         <option>Mais procurados</option>
                         <option>Menor preço</option>
                         <option>Maior preço</option>
@@ -87,112 +88,125 @@
             <div class="row g-4">
 
                 <aside class="col-lg-3">
-                    <div class="sidebar-filtros" role="group" aria-labelledby="tituloFiltrarPacotes">
-                        <div class="sidebar-filtros-topo">
-                            <h2 id="tituloFiltrarPacotes">Filtrar resultados</h2>
-                            <i class="bi bi-sliders"></i>
-                        </div>
-
-                        <div class="accordion accordion-filtros" id="accordionFiltros">
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#filtroDestino" aria-expanded="true"
-                                        aria-controls="filtroDestino">Destino</button>
-                                </h3>
-                                <div id="filtroDestino" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino1"><label class="form-check-label" for="destino1">Bahia
-                                                (Salvador)</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino2"><label class="form-check-label" for="destino2">Mato Grosso
-                                                do Sul (Bonito)</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino3"><label class="form-check-label"
-                                                for="destino3">Maranhão</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino4"><label class="form-check-label"
-                                                for="destino4">Goiás</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino5"><label class="form-check-label" for="destino5">Minas
-                                                Gerais</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="destino6"><label class="form-check-label"
-                                                for="destino6">Pernambuco</label></div>
-                                    </div>
-                                </div>
+                    <button
+                        class="btn btn-outline-secondary btn-filtros-mobile d-flex d-lg-none w-100 justify-content-between align-items-center mb-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#painelFiltros" aria-expanded="false"
+                        aria-controls="painelFiltros">
+                        <span><i class="bi bi-sliders"></i> Filtros</span>
+                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="collapse d-lg-block" id="painelFiltros">
+                        <div class="sidebar-filtros" role="group" aria-labelledby="tituloFiltrarPacotes">
+                            <div class="sidebar-filtros-topo">
+                                <h2 id="tituloFiltrarPacotes">Filtrar resultados</h2>
+                                <i class="bi bi-sliders"></i>
                             </div>
 
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#filtroDuracao" aria-expanded="false"
-                                        aria-controls="filtroDuracao">Duração</button>
-                                </h4>
-                                <div id="filtroDuracao" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="dur1"><label class="form-check-label" for="dur1">Até 3 dias</label>
+                            <div class="accordion accordion-filtros" id="accordionFiltros">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#filtroDestino" aria-expanded="true"
+                                            aria-controls="filtroDestino">Destino</button>
+                                    </h3>
+                                    <div id="filtroDestino" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFiltros">
+                                        <div class="accordion-body d-flex flex-column gap-2">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino1"><label class="form-check-label" for="destino1">Bahia
+                                                    (Salvador)</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino2"><label class="form-check-label" for="destino2">Mato
+                                                    Grosso
+                                                    do Sul (Bonito)</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino3"><label class="form-check-label"
+                                                    for="destino3">Maranhão</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino4"><label class="form-check-label"
+                                                    for="destino4">Goiás</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino5"><label class="form-check-label" for="destino5">Minas
+                                                    Gerais</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="destino6"><label class="form-check-label"
+                                                    for="destino6">Pernambuco</label></div>
                                         </div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="dur2"><label class="form-check-label" for="dur2">4 a 7 dias</label>
-                                        </div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="dur3"><label class="form-check-label" for="dur3">8 a 14 dias</label>
-                                        </div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                id="dur4"><label class="form-check-label" for="dur4">Mais de 14
-                                                dias</label></div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#filtroCategoria" aria-expanded="true"
-                                        aria-controls="filtroCategoria">Categoria</button>
-                                </h4>
-                                <div id="filtroCategoria" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body d-flex flex-column gap-2">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                data-filtro-categoria value="ecoturismo" id="cat1"><label
-                                                class="form-check-label" for="cat1">Ecoturismo</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                data-filtro-categoria value="cultural" id="cat2"><label
-                                                class="form-check-label" for="cat2">Cultural</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                data-filtro-categoria value="praia" id="cat3"><label
-                                                class="form-check-label" for="cat3">Praia</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                data-filtro-categoria value="aventura" id="cat4"><label
-                                                class="form-check-label" for="cat4">Aventura</label></div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                data-filtro-categoria value="gastronomico" id="cat5"><label
-                                                class="form-check-label" for="cat5">Gastronômico</label></div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#filtroDuracao"
+                                            aria-expanded="false" aria-controls="filtroDuracao">Duração</button>
+                                    </h3>
+                                    <div id="filtroDuracao" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFiltros">
+                                        <div class="accordion-body d-flex flex-column gap-2">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="dur1"><label class="form-check-label" for="dur1">Até 3
+                                                    dias</label>
+                                            </div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="dur2"><label class="form-check-label" for="dur2">4 a 7
+                                                    dias</label>
+                                            </div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="dur3"><label class="form-check-label" for="dur3">8 a 14
+                                                    dias</label>
+                                            </div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    id="dur4"><label class="form-check-label" for="dur4">Mais de 14
+                                                    dias</label></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#filtroPreco" aria-expanded="false"
-                                        aria-controls="filtroPreco">Faixa de preço</button>
-                                </h4>
-                                <div id="filtroPreco" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFiltros">
-                                    <div class="accordion-body">
-                                        <label for="faixa-preco" class="form-check-label d-block mb-2">Até <span
-                                                id="valor-faixa-preco">R$ 8.000</span></label>
-                                        <input type="range" class="form-range" id="faixa-preco" min="800" max="12000"
-                                            value="8000" step="100"
-                                            oninput="document.getElementById('valor-faixa-preco').textContent = 'R$ ' + Number(this.value).toLocaleString('pt-BR')">
-                                        <div class="legenda-slider"><span>R$ 800</span><span>R$ 12.000+</span></div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#filtroCategoria" aria-expanded="true"
+                                            aria-controls="filtroCategoria">Categoria</button>
+                                    </h3>
+                                    <div id="filtroCategoria" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFiltros">
+                                        <div class="accordion-body d-flex flex-column gap-2">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    data-filtro-categoria value="ecoturismo" id="cat1"><label
+                                                    class="form-check-label" for="cat1">Ecoturismo</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    data-filtro-categoria value="cultural" id="cat2"><label
+                                                    class="form-check-label" for="cat2">Cultural</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    data-filtro-categoria value="praia" id="cat3"><label
+                                                    class="form-check-label" for="cat3">Praia</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    data-filtro-categoria value="aventura" id="cat4"><label
+                                                    class="form-check-label" for="cat4">Aventura</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                    data-filtro-categoria value="gastronomico" id="cat5"><label
+                                                    class="form-check-label" for="cat5">Gastronômico</label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#filtroPreco"
+                                            aria-expanded="false" aria-controls="filtroPreco">Faixa de preço</button>
+                                    </h3>
+                                    <div id="filtroPreco" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFiltros">
+                                        <div class="accordion-body">
+                                            <label for="faixa-preco" class="form-check-label d-block mb-2">Até <span
+                                                    id="valor-faixa-preco">R$ 8.000</span></label>
+                                            <input type="range" class="form-range" id="faixa-preco" min="800"
+                                                max="12000" value="8000" step="100"
+                                                oninput="document.getElementById('valor-faixa-preco').textContent = 'R$ ' + Number(this.value).toLocaleString('pt-BR')">
+                                            <div class="legenda-slider"><span>R$ 800</span><span>R$ 12.000+</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -202,11 +216,12 @@
 
 
                 <div class="col-lg-9">
+                    <h2 class="visually-hidden">Pacotes disponíveis</h2>
                     <div class="row g-4">
                         <div class="col-md-6 col-xl-4">
                             <article class="card card-pacote" data-categoria="praia">
                                 <img src="img/pacotes/salvadorP.png" class="card-img-top"
-                                    alt="Casario histórico de Salvador ao entardecer" loading="lazy">
+                                    alt="Praia com o Farol da Barra ao fundo, em Salvador" loading="lazy">
                                 <div class="card-body">
                                     <span class="badge badge-categoria mb-2"><i class="bi bi-water"></i> Praia</span>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -236,7 +251,7 @@
                                         <div class="avaliacao"><i class="bi bi-star-fill"></i> 4.9 (95)</div>
                                     </div>
                                     <h3 class="card-title">Bonito Essencial</h3>
-                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 6 dias / 5 noites</div>
+                                    <div class="duracao mb-3"><i class="bi bi-clock"></i> 5 dias / 4 noites</div>
                                     <div class="rodape-card d-flex align-items-end justify-content-between gap-2">
                                         <div class="preco-a-partir"><span>A partir de</span><strong>R$ 2.390</strong>
                                         </div>
@@ -409,18 +424,22 @@
         </div>
     </main>
 
+
     <footer class="rodape">
         <div class="container">
             <div class="row gy-5 pb-5 rodape-grade">
-                <div class="col-lg-4 col-md-6 rodape-marca h-card">
-                    <a href="index.html" class="marca">
-                        <img src="img/geral/LogoAgencia.png" alt="">
+
+                <div class="col-lg-4 col-md-6 rodape-marca h-card text-center text-lg-start">
+                    <a href="index.html" class="marca justify-content-center justify-content-lg-start">
+                        <img src="img/geral/LogoAgencia.png" alt="logo Descubra Brasil">
                         <span class="nome-marca p-name">Descubra Brasil</span>
                     </a>
+
                     <p class="rodape-tagline">Viva lugares reais</p>
                     <p>Conectamos você aos melhores destinos do Brasil com experiências autênticas, segurança e
                         responsabilidade.</p>
-                    <div class="rodape-social d-flex gap-2">
+
+                    <div class="rodape-social d-flex justify-content-center justify-content-lg-start gap-2">
                         <a href="https://www.instagram.com/" aria-label="Descubra Brasil no Instagram"><i
                                 class="bi bi-instagram"></i></a>
                         <a href="https://www.facebook.com/?locale=pt_BR" aria-label="Descubra Brasil no Facebook"><i
@@ -432,7 +451,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-6 text-center text-lg-start">
                     <h3>Navegação</h3>
                     <nav aria-label="Navegação do rodapé">
                         <ul>
@@ -444,27 +463,29 @@
                     </nav>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 text-center text-lg-start">
                     <h3>Informações</h3>
                     <nav aria-label="Informações institucionais">
                         <ul>
-                            <li><a href="sobre.html" target="_blank">Termos de Uso</a></li>
-                            <li><a href="sobre.html" target="_blank">Políticas de Privacidade</a></li>
-                            <li><a href="sobre.html" target="_blank">Ajuda</a></li>
+                            <li><a href="sobre.html">Termos de Uso</a></li>
+                            <li><a href="sobre.html">Políticas de Privacidade</a></li>
+                            <li><a href="sobre.html">Ajuda</a></li>
                         </ul>
                     </nav>
                 </div>
 
-                <div class="col-lg-3 col-md-6 rodape-certificacao">
+                <div class="col-lg-3 col-md-6 rodape-certificacao text-center text-lg-start">
                     <h3>Certificações</h3>
-                    <div class="selo-cadastur" role="img" aria-label="Selo CADASTUR - Ministério do Turismo">
+                    <div class="selo-cadastur mx-auto mx-lg-0" role="img"
+                        aria-label="Selo CADASTUR - Ministério do Turismo">
                         <img src="img/geral/logoCadasturB.png" alt="Selo CADASTUR - Ministério do Turismo">
                     </div>
                     <p>Empresa cadastrada no CADASTUR e comprometida com o turismo responsável.</p>
                 </div>
+
             </div>
 
-            <div class="rodape-inferior d-flex justify-content-between flex-wrap gap-2">
+            <div class="rodape-inferior d-flex justify-content-between align-items-center flex-wrap gap-2 text-center">
                 <p class="mb-0">&copy; 2026 Descubra Brasil Turismo. Todos os direitos reservados.</p>
                 <p class="mb-0">Site desenvolvido com amor para viajantes.</p>
             </div>

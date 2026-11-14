@@ -76,11 +76,11 @@
                 </div>
                 <label class="d-flex align-items-center gap-2 seletor-ordenacao">
                     <i class="bi bi-sort-down"></i>
-                    <select class="form-select border-0 bg-transparent" aria-label="Ordenar pacotes">
-                        <option>Mais procurados</option>
-                        <option>Menor preço</option>
-                        <option>Maior preço</option>
-                        <option>Melhor avaliação</option>
+                    <select class="form-select border-0 bg-transparent" id="ordenacao-pacotes" aria-label="Ordenar pacotes">
+                        <option value="procurados">Mais procurados</option>
+                        <option value="menor-preco">Menor preço</option>
+                        <option value="maior-preco">Maior preço</option>
+                        <option value="avaliacao">Melhor avaliação</option>
                     </select>
                 </label>
             </div>
@@ -113,23 +113,23 @@
                                         data-bs-parent="#accordionFiltros">
                                         <div class="accordion-body d-flex flex-column gap-2">
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino1"><label class="form-check-label" for="destino1">Bahia
+                                                    data-filtro-destino value="bahia" id="destino1"><label class="form-check-label" for="destino1">Bahia
                                                     (Salvador)</label></div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino2"><label class="form-check-label" for="destino2">Mato
+                                                    data-filtro-destino value="mato-grosso-do-sul" id="destino2"><label class="form-check-label" for="destino2">Mato
                                                     Grosso
                                                     do Sul (Bonito)</label></div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino3"><label class="form-check-label"
+                                                    data-filtro-destino value="maranhao" id="destino3"><label class="form-check-label"
                                                     for="destino3">Maranhão</label></div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino4"><label class="form-check-label"
+                                                    data-filtro-destino value="goias" id="destino4"><label class="form-check-label"
                                                     for="destino4">Goiás</label></div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino5"><label class="form-check-label" for="destino5">Minas
+                                                    data-filtro-destino value="minas-gerais" id="destino5"><label class="form-check-label" for="destino5">Minas
                                                     Gerais</label></div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="destino6"><label class="form-check-label"
+                                                    data-filtro-destino value="pernambuco" id="destino6"><label class="form-check-label"
                                                     for="destino6">Pernambuco</label></div>
                                         </div>
                                     </div>
@@ -145,19 +145,19 @@
                                         data-bs-parent="#accordionFiltros">
                                         <div class="accordion-body d-flex flex-column gap-2">
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="dur1"><label class="form-check-label" for="dur1">Até 3
+                                                    data-filtro-duracao data-dias-min="1" data-dias-max="3" id="dur1"><label class="form-check-label" for="dur1">Até 3
                                                     dias</label>
                                             </div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="dur2"><label class="form-check-label" for="dur2">4 a 7
+                                                    data-filtro-duracao data-dias-min="4" data-dias-max="7" id="dur2"><label class="form-check-label" for="dur2">4 a 7
                                                     dias</label>
                                             </div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="dur3"><label class="form-check-label" for="dur3">8 a 14
+                                                    data-filtro-duracao data-dias-min="8" data-dias-max="14" id="dur3"><label class="form-check-label" for="dur3">8 a 14
                                                     dias</label>
                                             </div>
                                             <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                    id="dur4"><label class="form-check-label" for="dur4">Mais de 14
+                                                    data-filtro-duracao data-dias-min="15" data-dias-max="999" id="dur4"><label class="form-check-label" for="dur4">Mais de 14
                                                     dias</label></div>
                                         </div>
                                     </div>
@@ -203,13 +203,14 @@
                                             <label for="faixa-preco" class="form-check-label d-block mb-2">Até <span
                                                     id="valor-faixa-preco">R$ 8.000</span></label>
                                             <input type="range" class="form-range" id="faixa-preco" min="800"
-                                                max="12000" value="8000" step="100"
-                                                oninput="document.getElementById('valor-faixa-preco').textContent = 'R$ ' + Number(this.value).toLocaleString('pt-BR')">
+                                                max="12000" value="8000" step="100">
                                             <div class="legenda-slider"><span>R$ 800</span><span>R$ 12.000+</span></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-outline-secondary w-100 my-3" id="botao-limpar-filtros"><i
+                                    class="bi bi-x-circle"></i> Limpar filtros</button>
                         </div>
                     </div>
                 </aside>
@@ -217,9 +218,16 @@
 
                 <div class="col-lg-9">
                     <h2 class="visually-hidden">Pacotes disponíveis</h2>
+                    <p class="contador-resultados" id="contador-pacotes" aria-live="polite"></p>
+                    <div class="mensagem-vazia d-none" id="mensagem-sem-pacotes" role="status">
+                        <i class="bi bi-search"></i>
+                        <h3>Nenhum pacote encontrado</h3>
+                        <p>Não encontramos pacotes com esses filtros. Tente remover algum critério ou limpar os filtros.</p>
+                        <button type="button" class="btn btn-primary" id="botao-limpar-vazio">Limpar filtros</button>
+                    </div>
                     <div class="row g-4">
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="praia">
+                            <article class="card card-pacote" data-categoria="praia" data-destino="bahia" data-duracao="5" data-preco="2590" data-avaliacao="4.9" data-avaliacoes="128">
                                 <img src="img/pacotes/salvadorP.png" class="card-img-top"
                                     alt="Praia com o Farol da Barra ao fundo, em Salvador" loading="lazy">
                                 <div class="card-body">
@@ -240,7 +248,7 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="ecoturismo">
+                            <article class="card card-pacote" data-categoria="ecoturismo" data-destino="mato-grosso-do-sul" data-duracao="5" data-preco="2390" data-avaliacao="4.9" data-avaliacoes="95">
                                 <img src="img/pacotes/bonitoP.png" class="card-img-top"
                                     alt="Rio de águas transparentes em Bonito" loading="lazy">
                                 <div class="card-body">
@@ -262,7 +270,7 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="aventura">
+                            <article class="card card-pacote" data-categoria="aventura" data-destino="goias" data-duracao="4" data-preco="3290" data-avaliacao="4.8" data-avaliacoes="54">
                                 <img src="img/pacotes/chapadaVP.png" class="card-img-top"
                                     alt="Cachoeira na Chapada dos Veadeiros" loading="lazy">
                                 <div class="card-body">
@@ -284,7 +292,7 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="cultural">
+                            <article class="card card-pacote" data-categoria="cultural" data-destino="minas-gerais" data-duracao="5" data-preco="2190" data-avaliacao="4.7" data-avaliacoes="82">
                                 <img src="img/pacotes/minasHistoricasP.png" class="card-img-top"
                                     alt="Ruas históricas de Ouro Preto, Minas Gerais" loading="lazy">
                                 <div class="card-body">
@@ -306,7 +314,7 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="praia">
+                            <article class="card card-pacote" data-categoria="praia" data-destino="pernambuco" data-duracao="6" data-preco="2480" data-avaliacao="4.8" data-avaliacoes="112">
                                 <img src="img/pacotes/portoGalinP.png" class="card-img-top"
                                     alt="Piscinas naturais de Porto de Galinhas" loading="lazy">
                                 <div class="card-body">
@@ -327,7 +335,7 @@
                         </div>
 
                         <div class="col-md-6 col-xl-4">
-                            <article class="card card-pacote" data-categoria="gastronomico">
+                            <article class="card card-pacote" data-categoria="gastronomico" data-destino="rio-de-janeiro" data-duracao="3" data-preco="2790" data-avaliacao="4.9" data-avaliacoes="25">
                                 <img src="img/pacotes/saboresP.png" class="card-img-top"
                                     alt="Prato típico de frutos do mar em Paraty" loading="lazy">
                                 <div class="card-body">
@@ -348,8 +356,8 @@
                             </article>
                         </div>
 
-                        <div class="col-md-6 col-xl-4 pacote-oculto" data-categoria="praia">
-                            <article class="card card-pacote">
+                        <div class="col-md-6 col-xl-4">
+                            <article class="card card-pacote" data-categoria="praia" data-destino="pernambuco" data-duracao="7" data-preco="6400" data-avaliacao="5.0" data-avaliacoes="203">
                                 <img src="img/destinos/fernandoNoronhaD.png" class="card-img-top"
                                     alt="Falésias e mar azul de Fernando de Noronha" loading="lazy">
                                 <div class="card-body">
@@ -370,8 +378,8 @@
                             </article>
                         </div>
 
-                        <div class="col-md-6 col-xl-4 pacote-oculto" data-categoria="ecoturismo">
-                            <article class="card card-pacote">
+                        <div class="col-md-6 col-xl-4">
+                            <article class="card card-pacote" data-categoria="ecoturismo" data-destino="maranhao" data-duracao="5" data-preco="2390" data-avaliacao="4.9" data-avaliacoes="67">
                                 <img src="img/destinos/lencoisMaranhenseD.png" class="card-img-top"
                                     alt="Lagoas entre as dunas dos Lençóis Maranhenses" loading="lazy">
                                 <div class="card-body">

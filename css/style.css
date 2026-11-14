@@ -1323,10 +1323,6 @@ p {
     margin-top: 6px;
 }
 
-.pacote-oculto {
-    display: none !important;
-}
-
 .faixa-personalizado {
     background-color: rgb(238, 233, 219);
     border-radius: var(--bs-border-radius);
@@ -1784,13 +1780,19 @@ p {
 }
 
 .modal-lightbox .modal-body {
+    position: relative;
     padding: 0;
     text-align: center;
 }
 
+/* A foto preenche toda a área do modal; as bordas podem ser cortadas, sem distorcer */
 .modal-lightbox img {
-    max-height: 85vh;
-    min-height: 200px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 75vh;
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--bs-border-radius-sm);
     background-color: rgba(255, 255, 255, 0.08);
 }
@@ -1932,4 +1934,91 @@ p {
     .lista-condicoes li {
         padding: 12px 16px;
     }
+}
+
+
+/* ==========================================================================
+   Sprint 4 - Interações em JavaScript
+   ========================================================================== */
+
+/* Contador de resultados e mensagem de "nenhum resultado" */
+.contador-resultados {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.mensagem-vazia {
+    text-align: center;
+    background-color: var(--cor-branco);
+    border: 1px dashed var(--cor-borda);
+    border-radius: var(--bs-border-radius);
+    padding: 48px 24px;
+    margin-bottom: 1.5rem;
+}
+
+.mensagem-vazia i {
+    font-size: 2.2rem;
+    color: var(--cor-verde);
+}
+
+.mensagem-vazia h3 {
+    font-size: 1.25rem;
+    margin: 12px 0 6px;
+}
+
+.mensagem-vazia p {
+    color: var(--cor-texto-secundario);
+    max-width: 460px;
+    margin: 0 auto 18px;
+}
+
+/* Imagens da galeria clicáveis */
+[data-galeria] {
+    cursor: zoom-in;
+}
+
+/* Modal de imagem ampliada */
+.modal-backdrop {
+    --bs-backdrop-opacity: 0.88;
+}
+
+.legenda-galeria {
+    color: var(--cor-branco);
+    font-size: 0.9rem;
+    margin: 14px 0 0;
+}
+
+.botao-galeria {
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(11, 18, 32, 0.65);
+    color: var(--cor-branco);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transicao);
+}
+
+.botao-galeria:hover {
+    background-color: var(--cor-laranja);
+}
+
+.botao-galeria-anterior {
+    left: 12px;
+}
+
+.botao-galeria-proximo {
+    right: 12px;
+}
+
+/* Ao buscar, a rolagem para os resultados não fica escondida atrás do cabeçalho fixo */
+#titulo-destinos {
+    scroll-margin-top: 150px;
 }

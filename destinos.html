@@ -58,19 +58,18 @@
                         mais desejadas do mundo. Experiências planejadas para quem ama explorar com verdade.</p>
                 </div>
 
-                <form class="busca-hero row g-0 align-items-center p-3" role="search" aria-label="Buscar destino"
-                    onsubmit="return false;">
+                <form class="busca-hero row g-0 align-items-center p-3" role="search" aria-label="Buscar destino" novalidate>
                     <div class="col-md-4 col-lg campo-busca">
                         <label for="busca-destino">Para onde quer ir?</label>
                         <div class="valor-campo"><i class="bi bi-geo-alt"></i>
                             <select id="busca-destino" name="destino">
                                 <option value="">Selecione o destino</option>
-                                <option>Fernando de Noronha</option>
-                                <option>Chapada dos Veadeiros</option>
-                                <option>Lençóis Maranhenses</option>
-                                <option>Bonito</option>
-                                <option>Salvador</option>
-                                <option>Jalapão</option>
+                                <option value="fernando-de-noronha">Fernando de Noronha</option>
+                                <option value="chapada-dos-veadeiros">Chapada dos Veadeiros</option>
+                                <option value="lencois-maranhenses">Lençóis Maranhenses</option>
+                                <option value="bonito">Bonito</option>
+                                <option value="salvador">Salvador</option>
+                                <option value="jalapao">Jalapão</option>
                             </select>
                         </div>
                     </div>
@@ -85,11 +84,11 @@
                         <div class="valor-campo"><i class="bi bi-signpost-2"></i>
                             <select id="busca-tipo" name="tipo">
                                 <option value="">Todos os tipos</option>
-                                <option>Ecoturismo</option>
-                                <option>Cultural</option>
-                                <option>Praia</option>
-                                <option>Aventura</option>
-                                <option>Gastronômico</option>
+                                <option value="ecoturismo">Ecoturismo</option>
+                                <option value="cultural">Cultural</option>
+                                <option value="praia">Praia</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="gastronomico">Gastronômico</option>
                             </select>
                         </div>
                     </div>
@@ -98,6 +97,8 @@
                             Buscar</button>
                     </div>
                 </form>
+
+                <div class="alert alert-danger mt-3 mb-0 d-none" id="mensagem-busca" role="alert"></div>
 
                 <div class="row estatisticas-hero">
                     <div class="col-6 col-lg-3"><strong>50+</strong><span>Destinos<br>Autênticos</span></div>
@@ -127,9 +128,17 @@
                     <button class="pilula" data-categoria="serra">Serra</button>
                 </div>
 
+                <p class="contador-resultados" id="contador-destinos" aria-live="polite"></p>
+                <div class="mensagem-vazia d-none" id="mensagem-sem-destinos" role="status">
+                    <i class="bi bi-compass"></i>
+                    <h3>Nenhum destino encontrado</h3>
+                    <p>Não encontramos destinos com esses critérios. Tente outra categoria ou limpe a busca.</p>
+                    <button type="button" class="btn btn-primary" id="botao-ver-todos-destinos">Ver todos os destinos</button>
+                </div>
+
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="praia">
+                        <article class="card card-destino" data-categoria="praia" data-destino="fernando-de-noronha">
                             <img src="img/destinos/fernandoNoronhaD.png" class="card-img-top"
                                 alt="Baía do Sancho em Fernando de Noronha, com águas cristalinas" loading="lazy">
                             <div class="card-body">
@@ -162,7 +171,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="aventura serra">
+                        <article class="card card-destino" data-categoria="aventura serra" data-destino="chapada-dos-veadeiros">
                             <img src="img/destinos/chapadaVeadeirosD.png" class="card-img-top"
                                 alt="Cachoeira cercada por vegetação de cerrado na Chapada dos Veadeiros"
                                 loading="lazy">
@@ -196,7 +205,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="natureza">
+                        <article class="card card-destino" data-categoria="natureza" data-destino="lencois-maranhenses">
                             <img src="img/destinos/lencoisMaranhenseD.png" class="card-img-top"
                                 alt="Lagoas azuis entre as dunas brancas dos Lençóis Maranhenses" loading="lazy">
                             <div class="card-body">
@@ -229,7 +238,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="natureza aventura">
+                        <article class="card card-destino" data-categoria="natureza aventura" data-destino="bonito">
                             <img src="img/destinos/bonito.png" class="card-img-top"
                                 alt="Águas cristalinas de rio em Bonito, Mato Grosso do Sul" loading="lazy">
                             <div class="card-body">
@@ -257,7 +266,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="cultural">
+                        <article class="card card-destino" data-categoria="cultural" data-destino="salvador">
                             <img src="img/destinos/SalvadorD.png" class="card-img-top" alt="Casario colorido do Pelourinho, em Salvador" loading="lazy">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-start mb-1">
@@ -283,7 +292,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6">
-                        <article class="card card-destino" data-categoria="natureza aventura">
+                        <article class="card card-destino" data-categoria="natureza aventura" data-destino="jalapao">
                             <img src="img/destinos/jalapaoD.png" class="card-img-top"
                                 alt="Dunas alaranjadas e lagoa cristalina no Jalapão" loading="lazy">
                             <div class="card-body">

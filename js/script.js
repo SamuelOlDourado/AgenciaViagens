@@ -7,6 +7,7 @@ function obterDataDeHoje() {
     return ano + '-' + mes + '-' + dia;
 }
 
+
 // AAAA-MM-DD -> DD/MM/AAAA
 function formatarData(dataIso) {
     const partes = dataIso.split('-');
@@ -14,3 +15,30 @@ function formatarData(dataIso) {
 }
 
 const dataDeHoje = obterDataDeHoje();
+
+
+// Mostra ou esconde um elemento com a classe d-none do Bootstrap
+function mostrarElemento(elemento, deveMostrar) {
+    elemento.classList.toggle('d-none', !deveMostrar);
+}
+
+
+
+// (1, 'pacote', 'pacotes') -> "1 pacote" | (3, 'pacote', 'pacotes') -> "3 pacotes"
+function escreverQuantidade(quantidade, singular, plural) {
+    if (quantidade === 1) {
+        return quantidade + ' ' + singular;
+    }
+    return quantidade + ' ' + plural;
+}
+
+
+// Só o botão da categoria escolhida fica com o visual ativo
+function ativarBotaoCategoria(botoes, categoria) {
+    botoes.forEach(function (botao) {
+        const estaAtivo = botao.dataset.categoria === categoria;
+        botao.classList.toggle('ativa', estaAtivo);
+        botao.setAttribute('aria-pressed', estaAtivo);
+    });
+}
+

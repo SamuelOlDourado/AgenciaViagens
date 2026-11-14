@@ -42,3 +42,20 @@ function ativarBotaoCategoria(botoes, categoria) {
     });
 }
 
+
+//fechar menu mobile ao clicar em um link do menu
+
+
+const menuNavegacao = document.querySelector('#navPrincipal');
+
+if (menuNavegacao && window.bootstrap) {
+    const linksDoMenu = menuNavegacao.querySelectorAll('a');
+
+    linksDoMenu.forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (menuNavegacao.classList.contains('show')) {
+                bootstrap.Collapse.getOrCreateInstance(menuNavegacao).hide();
+            }
+        });
+    });
+}

@@ -354,3 +354,84 @@ if (seletorOrdenacao) {
         }
         return true;
     }
+
+// comparadores da ordenação (negativo = A vem antes de B)
+    function compararMenorPreco(cartaoA, cartaoB) {
+        return Number(cartaoA.dataset.preco) - Number(cartaoB.dataset.preco);
+    }
+
+    function compararMaiorPreco(cartaoA, cartaoB) {
+        return Number(cartaoB.dataset.preco) - Number(cartaoA.dataset.preco);
+    }
+
+    // maior nota primeiro; no empate, quem tem mais avaliações
+    function compararMelhorAvaliacao(cartaoA, cartaoB) {
+        const diferencaDeNota = Number(cartaoB.dataset.avaliacao) - Number(cartaoA.dataset.avaliacao);
+        if (diferencaDeNota !== 0) {
+            return diferencaDeNota;
+        }
+        return Number(cartaoB.dataset.avaliacoes) - Number(cartaoA.dataset.avaliacoes);
+    }
+
+    // devolve uma cópia dos cards na ordem pedida
+    function ordenarCartoes(tipoDeOrdenacao) {
+        const cartoes = cartoesOriginais.slice();
+
+        if (tipoDeOrdenacao === 'menor-preco') {
+            cartoes.sort(compararMenorPreco);
+        }
+        if (tipoDeOrdenacao === 'maior-preco') {
+            cartoes.sort(compararMaiorPreco);
+        }
+        if (tipoDeOrdenacao === 'avaliacao') {
+            cartoes.sort(compararMelhorAvaliacao);
+        }
+        return cartoes;
+    }
+
+    function atualizarPacotes() {
+        const destinosMarcados = obterValoresMarcados(caixasDestino);
+        const categoriasMarcadas = obterValoresMarcados(caixasCategoria);
+        let precoMaximo = Number(faixaPreco.value);
+        let quantidadeEncontrada = 0;
+
+        // no máximo do slider ("R$ 12.000+") não há limite de preço
+        if (precoMaximo >= Number(faixaPreco.max)) {
+            precoMaximo = Infinity;
+        }
+
+        const cartoesOrdenados = ordenarCartoes(seletorOrdenacao.value);
+
+        cartoesOrdenados.forEach(function (cartao) {
+            const coluna = cartao.parentElement;
+            const deveAparecer = pacoteAtendeFiltros(cartao, destinosMarcados, categoriasMarcadas, precoMaximo);
+
+            // appendChild move a coluna para o fim da lista: assim a ordenação aparece na tela
+            listaDePacotes.appendChild(coluna);
+            mostrarElemento(coluna, deveAparecer);
+            if (deveAparecer) {
+                quantidadeEncontrada++;
+            }
+        });
+
+        contadorPacotes.textContent = escreverQuantidade(quantidadeEncontrada, 'pacote encontrado', 'pacotes encontrados');
+        mostrarElemento(mensagemSemPacotes, quantidadeEncontrada === 0);
+    }
+
+    // volta ao estado inicial: sem filtros e na ordem original
+    function limparFiltros() {
+        caixasDestino.forEach(function (caixa) {
+            caixa.checked = false;
+        });
+        caixasDuracao.forEach(function (caixa) {
+            caixa.checked = false;
+        });
+        caixasCategoria.forEach(function (caixa) {
+            caixa.checked = false;
+        });
+        faixaPreco.value = faixaPreco.defaultValue;
+        seletorOrdenacao.value = 'procurados';
+        atualizarRotuloDePreco();
+        ativarBotaoCategoria(botoesCategoria, 'todos');
+        atualizarPacotes();
+    }

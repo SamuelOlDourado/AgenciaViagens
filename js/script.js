@@ -284,3 +284,73 @@ formularioBusca.addEventListener('submit', function (event) {
 
     atualizarDestinos();
 }
+
+const seletorOrdenacao = document.querySelector('#ordenacao-pacotes');
+
+if (seletorOrdenacao) {
+    const caixasDestino = document.querySelectorAll('[data-filtro-destino]');
+    const caixasDuracao = document.querySelectorAll('[data-filtro-duracao]');
+    const caixasCategoria = document.querySelectorAll('[data-filtro-categoria]');
+    const botoesCategoria = document.querySelectorAll('.filtros-pilula .pilula');
+    const faixaPreco = document.querySelector('#faixa-preco');
+    const valorFaixaPreco = document.querySelector('#valor-faixa-preco');
+    const botaoLimparFiltros = document.querySelector('#botao-limpar-filtros');
+    const botaoLimparVazio = document.querySelector('#botao-limpar-vazio');
+    const contadorPacotes = document.querySelector('#contador-pacotes');
+    const mensagemSemPacotes = document.querySelector('#mensagem-sem-pacotes');
+
+    // guarda a ordem original dos cards ("Mais procurados")
+    const cartoesOriginais = [];
+    document.querySelectorAll('.card-pacote').forEach(function (cartao) {
+        cartoesOriginais.push(cartao);
+    });
+    const listaDePacotes = cartoesOriginais[0].parentElement.parentElement;
+
+    // valores das caixas marcadas, ex.: ['praia', 'cultural']
+    function obterValoresMarcados(caixas) {
+        const valores = [];
+        caixas.forEach(function (caixa) {
+            if (caixa.checked) {
+                valores.push(caixa.value);
+            }
+        });
+        return valores;
+    }
+
+    function atualizarRotuloDePreco() {
+        valorFaixaPreco.textContent = 'R$ ' + Number(faixaPreco.value).toLocaleString('pt-BR');
+    }
+
+    // sem nenhuma faixa marcada, qualquer duração serve
+    function pacoteAtendeDuracao(cartao) {
+        const dias = Number(cartao.dataset.duracao);
+        let existeFaixaMarcada = false;
+
+        for (let posicao = 0; posicao < caixasDuracao.length; posicao++) {
+            const caixa = caixasDuracao[posicao];
+            if (caixa.checked) {
+                existeFaixaMarcada = true;
+                if (dias >= Number(caixa.dataset.diasMin) && dias <= Number(caixa.dataset.diasMax)) {
+                    return true;
+                }
+            }
+        }
+        return !existeFaixaMarcada;
+    }
+
+    // o pacote só aparece se passar por todos os filtros
+    function pacoteAtendeFiltros(cartao, destinosMarcados, categoriasMarcadas, precoMaximo) {
+        if (destinosMarcados.length > 0 && !destinosMarcados.includes(cartao.dataset.destino)) {
+            return false;
+        }
+        if (categoriasMarcadas.length > 0 && !categoriasMarcadas.includes(cartao.dataset.categoria)) {
+            return false;
+        }
+        if (!pacoteAtendeDuracao(cartao)) {
+            return false;
+        }
+        if (Number(cartao.dataset.preco) > precoMaximo) {
+            return false;
+        }
+        return true;
+    }

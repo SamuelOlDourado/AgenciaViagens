@@ -169,3 +169,47 @@ if (formularioReserva) {
 }
 
 
+const formularioBusca = document.querySelector('.busca-hero');
+
+if (formularioBusca) {
+    const cartoesDestino = document.querySelectorAll('.card-destino');
+    const campoBuscaDestino = document.querySelector('#busca-destino');
+    const campoBuscaData = document.querySelector('#busca-data');
+    const campoBuscaTipo = document.querySelector('#busca-tipo');
+    const mensagemBusca = document.querySelector('#mensagem-busca');
+    const botoesCategoria = document.querySelectorAll('.filtros-pilula .pilula');
+    const contadorDestinos = document.querySelector('#contador-destinos');
+    const mensagemSemDestinos = document.querySelector('#mensagem-sem-destinos');
+    const botaoVerTodos = document.querySelector('#botao-ver-todos-destinos');
+
+    // filtros atuais (os botões de categoria e a busca funcionam juntos)
+    let categoriaSelecionada = 'todos';
+    let destinoBuscado = '';
+    let tipoBuscado = '';
+    let dataBuscada = '';
+
+    campoBuscaData.min = dataDeHoje;
+
+    // "Ecoturismo" reúne natureza e serra; os outros tipos têm categoria própria
+    function tipoCombinaComCategorias(tipo, categoriasDoCartao) {
+        if (tipo === 'ecoturismo') {
+            return categoriasDoCartao.includes('natureza') || categoriasDoCartao.includes('serra');
+        }
+        return categoriasDoCartao.includes(tipo);
+    }
+
+    // O card só aparece se passar por todos os filtros ativos
+    function destinoAtendeFiltros(cartao) {
+        const categoriasDoCartao = cartao.dataset.categoria.split(' ');
+
+        if (categoriaSelecionada !== 'todos' && !categoriasDoCartao.includes(categoriaSelecionada)) {
+            return false;
+        }
+        if (destinoBuscado !== '' && cartao.dataset.destino !== destinoBuscado) {
+            return false;
+        }
+        if (tipoBuscado !== '' && !tipoCombinaComCategorias(tipoBuscado, categoriasDoCartao)) {
+            return false;
+        }
+        return true;
+    }

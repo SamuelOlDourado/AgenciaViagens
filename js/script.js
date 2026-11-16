@@ -213,3 +213,32 @@ if (formularioBusca) {
         }
         return true;
     }
+
+function atualizarDestinos() {
+        let quantidadeEncontrada = 0;
+
+        cartoesDestino.forEach(function (cartao) {
+            const deveAparecer = destinoAtendeFiltros(cartao);
+            mostrarElemento(cartao.parentElement, deveAparecer);
+            if (deveAparecer) {
+                quantidadeEncontrada++;
+            }
+        });
+
+        let textoDoContador = escreverQuantidade(quantidadeEncontrada, 'destino encontrado', 'destinos encontrados');
+        // a data é só informativa: não há disponibilidade de viagens para filtrar
+        if (dataBuscada !== '') {
+            textoDoContador += ' — viagem prevista para ' + formatarData(dataBuscada);
+        }
+        contadorDestinos.textContent = textoDoContador;
+        mostrarElemento(mensagemSemDestinos, quantidadeEncontrada === 0);
+    }
+
+    // botões de categoria (Todos, Praia, Natureza...)
+    botoesCategoria.forEach(function (botao) {
+        botao.addEventListener('click', function () {
+            categoriaSelecionada = botao.dataset.categoria;
+            ativarBotaoCategoria(botoesCategoria, categoriaSelecionada);
+            atualizarDestinos();
+        });
+    });

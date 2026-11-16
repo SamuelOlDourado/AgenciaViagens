@@ -435,3 +435,51 @@ if (seletorOrdenacao) {
         ativarBotaoCategoria(botoesCategoria, 'todos');
         atualizarPacotes();
     }
+
+// botão de categoria do topo escolhe a mesma categoria da barra lateral
+    botoesCategoria.forEach(function (botao) {
+        botao.addEventListener('click', function () {
+            const categoria = botao.dataset.categoria;
+
+            caixasCategoria.forEach(function (caixa) {
+                caixa.checked = (caixa.value === categoria);
+            });
+            ativarBotaoCategoria(botoesCategoria, categoria);
+            atualizarPacotes();
+        });
+    });
+
+    // caixas da barra lateral: o botão do topo acompanha a escolha
+    caixasCategoria.forEach(function (caixa) {
+        caixa.addEventListener('change', function () {
+            const categoriasMarcadas = obterValoresMarcados(caixasCategoria);
+
+            if (categoriasMarcadas.length === 1) {
+                ativarBotaoCategoria(botoesCategoria, categoriasMarcadas[0]);
+            } else {
+                ativarBotaoCategoria(botoesCategoria, 'todos');
+            }
+            atualizarPacotes();
+        });
+    });
+
+    caixasDestino.forEach(function (caixa) {
+        caixa.addEventListener('change', atualizarPacotes);
+    });
+
+    caixasDuracao.forEach(function (caixa) {
+        caixa.addEventListener('change', atualizarPacotes);
+    });
+
+    faixaPreco.addEventListener('input', function () {
+        atualizarRotuloDePreco();
+        atualizarPacotes();
+    });
+
+    seletorOrdenacao.addEventListener('change', atualizarPacotes);
+    botaoLimparFiltros.addEventListener('click', limparFiltros);
+    botaoLimparVazio.addEventListener('click', limparFiltros);
+
+    atualizarRotuloDePreco();
+    atualizarPacotes();
+}

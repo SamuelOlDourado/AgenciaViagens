@@ -124,3 +124,48 @@ if (formularioReserva) {
 
         return '';
     }
+    // Mostra ou remove o erro (classes do Bootstrap). Devolve true se o campo for válido.
+    function validarCampo(campo) {
+        const erro = obterErroDoCampo(campo);
+        const mensagemDeErro = campo.parentElement.querySelector('.invalid-feedback');
+
+        if (erro !== '') {
+            campo.classList.add('is-invalid');
+            mensagemDeErro.textContent = erro;
+            return false;
+        }
+
+        campo.classList.remove('is-invalid');
+        return true;
+    }
+
+    formularioReserva.addEventListener('submit', function (event) {
+        event.preventDefault();
+        mostrarElemento(mensagemSucesso, false);
+
+        // valida todos os campos para mostrar todos os erros de uma vez
+        let formularioValido = true;
+        camposObrigatorios.forEach(function (campo) {
+            if (!validarCampo(campo)) {
+                formularioValido = false;
+            }
+        });
+
+        if (!formularioValido) {
+            formularioReserva.querySelector('.is-invalid').focus();
+            return;
+        }
+
+        // demonstração: não há backend, nada é enviado de verdade
+        formularioReserva.reset();
+        mostrarElemento(mensagemSucesso, true);
+        mensagemSucesso.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+     formularioReserva.addEventListener('input', function (event) {
+        if (event.target.classList.contains('is-invalid')) {
+            validarCampo(event.target);
+        }
+    });
+}
+
+

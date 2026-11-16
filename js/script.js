@@ -242,3 +242,45 @@ function atualizarDestinos() {
             atualizarDestinos();
         });
     });
+
+formularioBusca.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (campoBuscaData.value !== '' && campoBuscaData.value < dataDeHoje) {
+            mensagemBusca.textContent = 'Escolha uma data de hoje em diante. Datas passadas não são permitidas.';
+            mostrarElemento(mensagemBusca, true);
+            campoBuscaData.focus();
+            return;
+        }
+
+        mostrarElemento(mensagemBusca, false);
+        destinoBuscado = campoBuscaDestino.value;
+        tipoBuscado = campoBuscaTipo.value;
+        dataBuscada = campoBuscaData.value;
+        atualizarDestinos();
+
+        // os resultados ficam mais abaixo na página
+        document.querySelector('#titulo-destinos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // data corrigida: esconde o aviso de erro
+    campoBuscaData.addEventListener('change', function () {
+        if (campoBuscaData.value >= dataDeHoje) {
+            mostrarElemento(mensagemBusca, false);
+        }
+    });
+
+    // botão da mensagem "nenhum destino": limpa a busca e a categoria
+    botaoVerTodos.addEventListener('click', function () {
+        formularioBusca.reset();
+        mostrarElemento(mensagemBusca, false);
+        categoriaSelecionada = 'todos';
+        destinoBuscado = '';
+        tipoBuscado = '';
+        dataBuscada = '';
+        ativarBotaoCategoria(botoesCategoria, 'todos');
+        atualizarDestinos();
+    });
+
+    atualizarDestinos();
+}

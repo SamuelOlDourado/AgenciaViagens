@@ -483,3 +483,48 @@ if (seletorOrdenacao) {
     atualizarRotuloDePreco();
     atualizarPacotes();
 }
+
+const modalGaleria = document.querySelector('#modalGaleria');
+
+if (modalGaleria && window.bootstrap) {
+    const imagensDaGaleria = document.querySelectorAll('[data-galeria]');
+    const corpoDoModal = modalGaleria.querySelector('.modal-body');
+    const imagemAmpliada = modalGaleria.querySelector('img');
+    const legendaDaGaleria = modalGaleria.querySelector('.legenda-galeria');
+    const botaoAnterior = modalGaleria.querySelector('.botao-galeria-anterior');
+    const botaoProximo = modalGaleria.querySelector('.botao-galeria-proximo');
+    const botaoVerPrimeiras = document.querySelector('#galeria-primeira');
+    const botaoVerUltimas = document.querySelector('#galeria-ultima');
+    const modal = bootstrap.Modal.getOrCreateInstance(modalGaleria);
+
+    let posicaoAtual = 0;
+
+    // Mostra no modal a imagem da posição indicada
+    function mostrarImagem(posicao) {
+        // navegação circular: depois da última volta para a primeira
+        if (posicao < 0) {
+            posicao = imagensDaGaleria.length - 1;
+        }
+        if (posicao >= imagensDaGaleria.length) {
+            posicao = 0;
+        }
+        posicaoAtual = posicao;
+
+        const imagem = imagensDaGaleria[posicao];
+        const figura = imagem.closest('figure');
+        let textoDaLegenda = imagem.alt;
+
+        // a tira de fotos tem figcaption; as demais imagens usam o texto alternativo
+        if (figura && figura.querySelector('figcaption')) {
+            textoDaLegenda = figura.querySelector('figcaption').textContent;
+        }
+
+        imagemAmpliada.src = imagem.src;
+        imagemAmpliada.alt = imagem.alt;
+        legendaDaGaleria.textContent = (posicao + 1) + ' / ' + imagensDaGaleria.length + ' — ' + textoDaLegenda;
+    }
+
+    function abrirGaleria(posicao) {
+        mostrarImagem(posicao);
+        modal.show();
+    }

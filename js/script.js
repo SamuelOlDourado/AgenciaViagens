@@ -553,3 +553,23 @@ imagensDaGaleria.forEach(function (imagem, posicao) {
     botaoProximo.addEventListener('click', function () {
         mostrarImagem(posicaoAtual + 1);
     });
+
+corpoDoModal.addEventListener('click', function (event) {
+        if (!event.target.closest('img, button')) {
+            modal.hide();
+        }
+    });
+
+    // setas do teclado trocam de imagem enquanto o modal está aberto
+    document.addEventListener('keydown', function (event) {
+        if (!modalGaleria.classList.contains('show')) {
+            return;
+        }
+        if (event.key === 'ArrowLeft') {
+            mostrarImagem(posicaoAtual - 1);
+        }
+        if (event.key === 'ArrowRight') {
+            mostrarImagem(posicaoAtual + 1);
+        }
+    });
+}

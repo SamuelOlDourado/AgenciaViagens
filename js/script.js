@@ -528,3 +528,28 @@ if (modalGaleria && window.bootstrap) {
         mostrarImagem(posicao);
         modal.show();
     }
+
+imagensDaGaleria.forEach(function (imagem, posicao) {
+        const elementoClicavel = imagem.closest('button') || imagem;
+        elementoClicavel.addEventListener('click', function () {
+            abrirGaleria(posicao);
+        });
+    });
+
+    // botões acima da tira de fotos: abrem a primeira ou a última foto da tira
+    botaoVerPrimeiras.addEventListener('click', function () {
+        const primeiraDaTira = document.querySelector('.tira-galeria [data-galeria]');
+        abrirGaleria(Array.from(imagensDaGaleria).indexOf(primeiraDaTira));
+    });
+
+    botaoVerUltimas.addEventListener('click', function () {
+        abrirGaleria(imagensDaGaleria.length - 1);
+    });
+
+    botaoAnterior.addEventListener('click', function () {
+        mostrarImagem(posicaoAtual - 1);
+    });
+
+    botaoProximo.addEventListener('click', function () {
+        mostrarImagem(posicaoAtual + 1);
+    });
